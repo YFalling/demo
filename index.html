@@ -14,7 +14,6 @@
 <div class="bg_layer">
 	<div class="bg_layer_img" style="background:url('./img/bg.jpg') no-repeat center center;background-size:cover;"></div>
 </div>
-<div class="layer"></div>
 
 <div id="abc">
 	<p>alpha:<span id="alpha"></span></p><br/>
@@ -24,6 +23,11 @@
 <div class="camera">
 	<div class="space">
 		<div class="box1">1</div>
+		<div class="box2">2</div>
+		<div class="box3">3</div>
+		<div class="box4">4</div>
+		<div class="box5">5</div>
+		<div class="box6">6</div>
 	</div>
 </div>
 
@@ -61,31 +65,6 @@ if(window.DeviceOrientationEvent) {
 		space[0].style.transform = 'rotateX('+beta+'deg) rotateY('+gamma+'deg) rotateZ('+alpha+'deg)';
 		space[0].style.mozTransform = 'rotateX('+beta+'deg) rotateY('+gamma+'deg) rotateZ('+alpha+'deg)';
 
-	}, false);
-}else{
-	document.querySelector('body').innerHTML = '你的瀏覽器不支援喔';
-}
-</script>
-<script>
-var layer = document.querySelectorAll('.layer');
-if(window.DeviceOrientationEvent){
-	window.addEventListener('deviceorientation', function(event){
-		var a = document.getElementById('alpha'),
-			b = document.getElementById('beta'),
-			g = document.getElementById('gamma'),
-			alpha = event.alpha,
-			beta = event.beta,
-			gamma = event.gamma;
-
-		a.innerHTML = Math.round(alpha);
-		b.innerHTML = Math.round(beta);
-		g.innerHTML = Math.round(gamma);
-		
-		layer.style.webkitTransform = 'translateX('+beta+'rem) translateY('+gamma+'rem)';
-		layer.style.transform = 'translateX('+beta+'rem) translateY('+gamma+'rem)';
-		$(".layer").css("left",beta+'rem');
-		$(".layer").css("top",gamma+'rem');
-		
 	}, false);
 }else{
 	document.querySelector('body').innerHTML = '你的瀏覽器不支援喔';
