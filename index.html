@@ -81,7 +81,8 @@ if(window.DeviceOrientationEvent){
 		b.innerHTML = Math.round(beta);
 		g.innerHTML = Math.round(gamma);
 		
-		layer[0].style.transform = 'translate('+alpha+'rem '+beta+'rem)';
+		layer.style.webkitTransform = 'translateX('+beta+'rem) translateY('+gamma+'rem)';
+		layer.style.transform = 'translateX('+beta+'rem) translateY('+gamma+'rem)';
 	}, false);
 }else{
 	document.querySelector('body').innerHTML = '你的瀏覽器不支援喔';
