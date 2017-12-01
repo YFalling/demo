@@ -14,6 +14,8 @@
 <div class="bg_layer">
 	<div class="bg_layer_img" style="background:url('./img/bg.jpg') no-repeat center center;background-size:cover;"></div>
 </div>
+<div class="layer"></div>
+
 <div id="abc">
 	<p>alpha:<span id="alpha"></span></p><br/>
 	<p>beta:<span id="beta"></span></p><br/>
@@ -58,6 +60,22 @@ if(window.DeviceOrientationEvent) {
 		space[0].style.webkitTransform = 'rotateX('+beta+'deg) rotateY('+gamma+'deg) rotateZ('+alpha+'deg)';
 		space[0].style.transform = 'rotateX('+beta+'deg) rotateY('+gamma+'deg) rotateZ('+alpha+'deg)';
 		space[0].style.mozTransform = 'rotateX('+beta+'deg) rotateY('+gamma+'deg) rotateZ('+alpha+'deg)';
+
+	}, false);
+}else{
+	document.querySelector('body').innerHTML = '你的瀏覽器不支援喔';
+}
+</script>
+<script>
+var space = document.querySelectorAll('.layer');
+if(window.DeviceOrientationEvent) {
+
+	window.addEventListener('deviceorientation', function(event) {
+		var alpha = event.alpha,
+			beta = event.beta,
+			gamma = event.gamma;transform: translate(5rem,3rem);
+
+		layer[0].style.transform = 'translate('+alpha+beta+')';
 
 	}, false);
 }else{

@@ -14,6 +14,14 @@ body{ position: relative; width: 100%; height: 100%; margin: 0 auto; overflow: h
 	top: -5%;
 	z-index: 0;
 }
+.layer{
+	position: absolute;
+    width: 3rem;
+    height: 3rem;
+    background: rgba(0,0,0,0.5);
+    left: 10rem;
+    top: 8rem;
+}
 
 #abc{
 	position: relative;
