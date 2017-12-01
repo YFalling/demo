@@ -1,40 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-  <meta name="author" content="oxxo.studio">
-  <meta name="copyright" content="oxxo.studio">
-  <meta name=viewport content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	<title>HTML5 控制裝置陀螺儀 ( 三軸 ) - demo1</title>
-	<style>
-		body{
-			margin:50px;
-			font-size:15px;
-		}
-	</style>
-	<script>
-	if(window.DeviceOrientationEvent) {
-		window.addEventListener('deviceorientation', function(event) {
-      var a = document.getElementById('alpha'),
-      		b = document.getElementById('beta'),
-      		g = document.getElementById('gamma'),
-      		alpha = event.alpha,
-      		beta = event.beta,
-		  		gamma = event.gamma;
-      
-      a.innerHTML = Math.round(alpha);
-      b.innerHTML = Math.round(beta);
-      g.innerHTML = Math.round(gamma);
-          
-		}, false);
-  }else{
-  	document.querySelector('body').innerHTML = '你的瀏覽器不支援喔';
-  }
-	</script>
+<meta charset="UTF-8"/>
+<meta name="copyright" content="A4 STUDIO"/>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0"/>
+<title>HTML5 控制裝置陀螺儀 ( 三軸 ) - demo1</title>
+<link rel="stylesheet" href="./css/style.css"/>
+<script>
+if(window.DeviceOrientationEvent){
+	window.addEventListener('deviceorientation', function(event){
+		var a = document.getElementById('alpha'),
+			b = document.getElementById('beta'),
+			g = document.getElementById('gamma'),
+			alpha = event.alpha,
+			beta = event.beta,
+			gamma = event.gamma;
+
+		a.innerHTML = Math.round(alpha);
+		b.innerHTML = Math.round(beta);
+		g.innerHTML = Math.round(gamma);
+		  
+	}, false);
+}else{
+	document.querySelector('body').innerHTML = '你的瀏覽器不支援喔';
+}
+</script>
 </head>
 <body>
-	alpha:<span id="alpha"></span><br/>
-	beta:<span id="beta"></span><br/>
-	gamma:<span id="gamma"></span><br/>
+
+<div class="bg_layer">
+	<div class="bg_layer_img" style="background:url('./img/bg.jpg') no-repeat center center;background-size:cover;"></div>
+</div>
+<div class="abc">
+	<p>alpha:<span id="alpha"></span></p><br/>
+	<p>beta:<span id="beta"></span></p><br/>
+	<p>gamma:<span id="gamma"></span></p><br/>
+</div>
+
 </body>
 </html>
