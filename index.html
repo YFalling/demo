@@ -7,6 +7,26 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0"/>
 <title>HTML5 控制裝置陀螺儀 ( 三軸 ) - demo1</title>
 <link rel="stylesheet" href="./css/style.css"/>
+
+</head>
+<body>
+
+<div class="bg_layer">
+	<div class="bg_layer_img" style="background:url('./img/bg.jpg') no-repeat center center;background-size:cover;"></div>
+</div>
+<div id="abc">
+	<p>alpha:<span id="alpha"></span></p><br/>
+	<p>beta:<span id="beta"></span></p><br/>
+	<p>gamma:<span id="gamma"></span></p><br/>
+</div>
+<div class="camera">
+	<div class="space">
+		<div class="box1">1</div>
+	</div>
+</div>
+
+<!-- 引入JS文件 -->
+<script src="./js/jquery.js"></script>
 <script>
 if(window.DeviceOrientationEvent){
 	window.addEventListener('deviceorientation', function(event){
@@ -26,17 +46,23 @@ if(window.DeviceOrientationEvent){
 	document.querySelector('body').innerHTML = '你的瀏覽器不支援喔';
 }
 </script>
-</head>
-<body>
+<script>
+var space = document.querySelectorAll('.space');
+if(window.DeviceOrientationEvent) {
 
-<div class="bg_layer">
-	<div class="bg_layer_img" style="background:url('./img/bg.jpg') no-repeat center center;background-size:cover;"></div>
-</div>
-<div class="abc">
-	<p>alpha:<span id="alpha"></span></p><br/>
-	<p>beta:<span id="beta"></span></p><br/>
-	<p>gamma:<span id="gamma"></span></p><br/>
-</div>
+	window.addEventListener('deviceorientation', function(event) {
+		var alpha = event.alpha,
+			beta = event.beta,
+			gamma = event.gamma;
 
+		space[0].style.webkitTransform = 'rotateX('+beta+'deg) rotateY('+gamma+'deg) rotateZ('+alpha+'deg)';
+		space[0].style.transform = 'rotateX('+beta+'deg) rotateY('+gamma+'deg) rotateZ('+alpha+'deg)';
+		space[0].style.mozTransform = 'rotateX('+beta+'deg) rotateY('+gamma+'deg) rotateZ('+alpha+'deg)';
+
+	}, false);
+}else{
+	document.querySelector('body').innerHTML = '你的瀏覽器不支援喔';
+}
+</script>
 </body>
 </html>
