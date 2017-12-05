@@ -11,8 +11,8 @@
 </head>
 <body>
 
-<div class="bg_layer">
-	<div class="bg_layer_img" style="background:url('./img/bg.jpg') no-repeat center center;background-size:cover;"></div>
+<div id="bg_layer">
+	<div id="bg_layer_img" style="background:url('./img/bg.jpg') no-repeat center center;background-size:cover;"></div>
 </div>
 
 <div id="abc">
@@ -46,7 +46,9 @@ if(window.DeviceOrientationEvent){
 		a.innerHTML = Math.round(alpha);
 		b.innerHTML = Math.round(beta);
 		g.innerHTML = Math.round(gamma);
-		$(".bg_layer_img").css("transform",'translateY('+g+'px)');
+		
+		var b_layer = document.getElementById("bg_layer_img");
+		b_layer.style.webkitTransform = 'translateY('+gamma+'px)';
 		
 	}, false);
 }else{
