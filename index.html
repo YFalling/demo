@@ -47,10 +47,11 @@ if(window.DeviceOrientationEvent){
 		b.innerHTML = Math.round(beta);
 		g.innerHTML = Math.round(gamma);
 		
-		var b_layer = document.getElementById("bg_layer_img");
-		b_layer.style.webkitTransform = 'translateY('+gamma+'px)';
+		var x = gamma/400;
+		var y = beta/800;
 		
-		$("#bg_layer_img").css('transform','translateX('+gamma+'px)');
+		$("#bg_layer_img").css('transform','translateX('+x+'%)');
+		$("#bg_layer_img").css('transform','translateY('+y+'px)');
 		
 	}, false);
 }else{
