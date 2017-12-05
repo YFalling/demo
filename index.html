@@ -46,7 +46,8 @@ if(window.DeviceOrientationEvent){
 		a.innerHTML = Math.round(alpha);
 		b.innerHTML = Math.round(beta);
 		g.innerHTML = Math.round(gamma);
-		  
+		$(".bg_layer_img").css("transform",'translateY('+g+'px)');
+		
 	}, false);
 }else{
 	document.querySelector('body').innerHTML = '你的瀏覽器不支援喔';
