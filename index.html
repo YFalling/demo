@@ -47,11 +47,11 @@ if(window.DeviceOrientationEvent){
 		b.innerHTML = Math.round(beta);
 		g.innerHTML = Math.round(gamma);
 		
-		var x = gamma/400;
-		var y = beta/800;
+		var x = gamma/4;
+		var y = beta/8;
 		
 		$("#bg_layer_img").css('transform','translateX('+x+'%)');
-		$("#bg_layer_img").css('transform','translateY('+y+'px)');
+		$("#bg_layer_img").css('transform','translateY('+y+'%)');
 		
 	}, false);
 }else{
