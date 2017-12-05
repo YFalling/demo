@@ -50,6 +50,8 @@ if(window.DeviceOrientationEvent){
 		var b_layer = document.getElementById("bg_layer_img");
 		b_layer.style.webkitTransform = 'translateY('+gamma+'px)';
 		
+		$("#bg_layer_img").css('transform','translateX('+gamma+'px)');
+		
 	}, false);
 }else{
 	document.querySelector('body').innerHTML = '你的瀏覽器不支援喔';
