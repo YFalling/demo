@@ -46,8 +46,17 @@ if(window.DeviceOrientationEvent){
 		b.innerHTML = Math.round(beta);
 		g.innerHTML = Math.round(gamma);
 		
-		var orizontale = gamma/4;
-		var	verticale = beta/8;
+		var orizontale, verticale;
+
+		if(beta<90||beta>0){
+			verticale= beta/9;
+		}else if(beta>90){
+			verticale=24;
+		}else if(beta<0){
+			verticale=0;
+		}
+		
+		orizontale = gamma/4;
 		
 		$("#bg_layer_img").css('transform','translateX('+orizontale+'%) translateY('+verticale+'%)');
 		
